@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables and Data Types | 241681 Dalupang</title>
+    <link rel="stylesheet" href="241681DalupangCSS/241681DalupangStyles.css" />
+    <script src="241681DalupangJS/241681DalupangScripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div>
+          <div class="brand">Fundamentals of Programming</div>
+          <div class="course-title">Human Computer Interaction</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="241681DalupangIndex.html">Home</a></li>
+            <li><a href="241681DalupangBasicIO.html">Basic I/O</a></li>
+            <li>
+              <a href="241681DalupangVariables.html" class="active"
+                >Variables</a
+              >
+            </li>
+            <li><a href="241681DalupangConditionals.html">Conditionals</a></li>
+            <li><a href="241681DalupangLoops.html">Loops</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">Variables and Data Types</h1>
+
+      <div class="sample-grid">
+        <!-- Sample 1 -->
+        <div class="sample-card">
+          <h3 class="sample-title">1. Simple Addition (Numbers)</h3>
+          <p class="sample-desc">
+            Enter two numbers to add them using Numeric variables.
+          </p>
+          <div class="input-group">
+            <label for="varNum1">Number 1:</label>
+            <input type="number" id="varNum1" placeholder="0" />
+          </div>
+          <div class="input-group">
+            <label for="varNum2">Number 2:</label>
+            <input type="number" id="varNum2" placeholder="0" />
+          </div>
+          <button id="btnAdd">Add Numbers</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outAdd">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="sample-card">
+          <h3 class="sample-title">2. Profile Builder (Strings & Numbers)</h3>
+          <p class="sample-desc">
+            Combine different variable types (String & Number) into one output.
+          </p>
+          <div class="input-group">
+            <label for="varName">Name (String):</label>
+            <input type="text" id="varName" placeholder="e.g. Jane" />
+          </div>
+          <div class="input-group">
+            <label for="varAge">Age (Number):</label>
+            <input type="number" id="varAge" placeholder="19" />
+          </div>
+          <button id="btnProfile">Build Profile</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outProfile">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 3 -->
+        <div class="sample-card">
+          <h3 class="sample-title">3. Boolean Flipper</h3>
+          <p class="sample-desc">
+            Click to flip a Boolean variable between True and False.
+          </p>
+          <div class="input-group">
+            <p class="mb-2 text-center" style="color: #64748b">
+              A Boolean stores either true or false.
+            </p>
+          </div>
+          <button id="btnBool">Toggle Boolean</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outBool">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 4 -->
+        <div class="sample-card">
+          <h3 class="sample-title">4. Data Type Checker</h3>
+          <p class="sample-desc">
+            Type something and JavaScript will guess the data type.
+          </p>
+          <div class="input-group">
+            <label for="varType">Type any value:</label>
+            <input type="text" id="varType" placeholder="e.g. 5, true, Hello" />
+          </div>
+          <button id="btnType">Check Type</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outType">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 5 -->
+        <div class="sample-card">
+          <h3 class="sample-title">5. Temperature Converter (Float)</h3>
+          <p class="sample-desc">
+            Convert decimal variables (floats) from Celsius to Fahrenheit.
+          </p>
+          <div class="input-group">
+            <label for="varTemp">Celsius:</label>
+            <input type="number" step="0.1" id="varTemp" placeholder="36.5" />
+          </div>
+          <button id="btnTemp">Convert to °F</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outTemp">...</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops | 241681 Dalupang</title>
+    <link rel="stylesheet" href="241681DalupangCSS/241681DalupangStyles.css" />
+    <script src="241681DalupangJS/241681DalupangScripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div>
+          <div class="brand">Fundamentals of Programming</div>
+          <div class="course-title">Human Computer Interaction</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="241681DalupangIndex.html">Home</a></li>
+            <li><a href="241681DalupangBasicIO.html">Basic I/O</a></li>
+            <li><a href="241681DalupangVariables.html">Variables</a></li>
+            <li><a href="241681DalupangConditionals.html">Conditionals</a></li>
+            <li><a href="241681DalupangLoops.html" class="active">Loops</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">Loops</h1>
+
+      <div class="sample-grid">
+        <!-- Sample 1 -->
+        <div class="sample-card">
+          <h3 class="sample-title">1. Sequence Printer</h3>
+          <p class="sample-desc">
+            A For Loop that prints numbers from 1 up to N.
+          </p>
+          <div class="input-group">
+            <label for="loopSeq">Enter N (Max 100):</label>
+            <input type="number" id="loopSeq" placeholder="10" />
+          </div>
+          <button id="btnSeq">Print Sequence</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outSeq">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="sample-card">
+          <h3 class="sample-title">2. Multiplication Table</h3>
+          <p class="sample-desc">
+            A For Loop that generates the multiplication table for a number.
+          </p>
+          <div class="input-group">
+            <label for="loopMult">Enter Number:</label>
+            <input type="number" id="loopMult" placeholder="5" />
+          </div>
+          <button id="btnMult">Generate Table</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outMult" style="white-space: pre">
+              ...
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample 3 -->
+        <div class="sample-card">
+          <h3 class="sample-title">3. Word Repeater</h3>
+          <p class="sample-desc">
+            A While Loop that repeats a word a specific number of times.
+          </p>
+          <div class="input-group">
+            <label for="loopWord">Enter Word:</label>
+            <input type="text" id="loopWord" placeholder="Hello" />
+          </div>
+          <div class="input-group">
+            <label for="loopTimes">How Many Times?</label>
+            <input type="number" id="loopTimes" placeholder="3" />
+          </div>
+          <button id="btnRepeat">Repeat It</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outRepeat">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 4 -->
+        <div class="sample-card">
+          <h3 class="sample-title">4. Blastoff Countdown</h3>
+          <p class="sample-desc">A Do-While Loop that counts down to launch.</p>
+          <div class="input-group">
+            <label for="loopLaunch">Start Countdown From:</label>
+            <input type="number" id="loopLaunch" placeholder="5" />
+          </div>
+          <button id="btnLaunch">Initiate Launch</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outLaunch" style="white-space: pre">
+              ...
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample 5 -->
+        <div class="sample-card">
+          <h3 class="sample-title">5. Sum of 1 to N</h3>
+          <p class="sample-desc">
+            A For Loop that adds up all numbers from 1 to N.
+          </p>
+          <div class="input-group">
+            <label for="loopSumN">Enter N:</label>
+            <input type="number" id="loopSumN" placeholder="10" />
+          </div>
+          <button id="btnSumN">Calculate Sum</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outSumN">...</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

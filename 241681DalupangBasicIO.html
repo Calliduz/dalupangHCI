@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Input Output | 241681 Dalupang</title>
+    <link rel="stylesheet" href="241681DalupangCSS/241681DalupangStyles.css" />
+    <script src="241681DalupangJS/241681DalupangScripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div>
+          <div class="brand">Fundamentals of Programming</div>
+          <div class="course-title">Human Computer Interaction</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="241681DalupangIndex.html">Home</a></li>
+            <li>
+              <a href="241681DalupangBasicIO.html" class="active">Basic I/O</a>
+            </li>
+            <li><a href="241681DalupangVariables.html">Variables</a></li>
+            <li><a href="241681DalupangConditionals.html">Conditionals</a></li>
+            <li><a href="241681DalupangLoops.html">Loops</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">Basic Input Output</h1>
+
+      <div class="sample-grid">
+        <!-- Sample 1 -->
+        <div class="sample-card">
+          <h3 class="sample-title">1. Name Greeting</h3>
+          <p class="sample-desc">
+            Enter your name, and the system will welcome you.
+          </p>
+          <div class="input-group">
+            <label for="ioName">Your Name:</label>
+            <input type="text" id="ioName" placeholder="e.g. John Doe" />
+          </div>
+          <button id="btnGreet">Greet Me</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outGreet">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="sample-card">
+          <h3 class="sample-title">2. Echo Chamber</h3>
+          <p class="sample-desc">
+            Type something, and the system will echo it exactly.
+          </p>
+          <div class="input-group">
+            <label for="ioEcho">Text:</label>
+            <input type="text" id="ioEcho" placeholder="Type here..." />
+          </div>
+          <button id="btnEcho">Echo</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outEcho">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 3 -->
+        <div class="sample-card">
+          <h3 class="sample-title">3. Word Counter</h3>
+          <p class="sample-desc">
+            Find out how many words are in your sentence.
+          </p>
+          <div class="input-group">
+            <label for="ioWordCount">Sentence:</label>
+            <input
+              type="text"
+              id="ioWordCount"
+              placeholder="Type a sentence..."
+            />
+          </div>
+          <button id="btnWordCount">Count Words</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outWordCount">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 4 -->
+        <div class="sample-card">
+          <h3 class="sample-title">4. Uppercase Converter</h3>
+          <p class="sample-desc">
+            Converts your lowercase text to SHOUTING uppercase.
+          </p>
+          <div class="input-group">
+            <label for="ioUpper">Lowercase Text:</label>
+            <input type="text" id="ioUpper" placeholder="hello world" />
+          </div>
+          <button id="btnUpper">Convert</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outUpper">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 5 -->
+        <div class="sample-card">
+          <h3 class="sample-title">5. Character Counter</h3>
+          <p class="sample-desc">
+            Counts the exact total number of characters (including spaces).
+          </p>
+          <div class="input-group">
+            <label for="ioCharCount">Any Text:</label>
+            <input type="text" id="ioCharCount" placeholder="Type here..." />
+          </div>
+          <button id="btnCharCount">Count Characters</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outCharCount">...</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

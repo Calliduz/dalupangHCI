@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional Statements | 241681 Dalupang</title>
+    <link rel="stylesheet" href="241681DalupangCSS/241681DalupangStyles.css" />
+    <script src="241681DalupangJS/241681DalupangScripts.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div>
+          <div class="brand">Fundamentals of Programming</div>
+          <div class="course-title">Human Computer Interaction</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="241681DalupangIndex.html">Home</a></li>
+            <li><a href="241681DalupangBasicIO.html">Basic I/O</a></li>
+            <li><a href="241681DalupangVariables.html">Variables</a></li>
+            <li>
+              <a href="241681DalupangConditionals.html" class="active"
+                >Conditionals</a
+              >
+            </li>
+            <li><a href="241681DalupangLoops.html">Loops</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="page-title">Conditional Statements</h1>
+
+      <div class="sample-grid">
+        <!-- Sample 1 -->
+        <div class="sample-card">
+          <h3 class="sample-title">1. Pass or Fail Checker</h3>
+          <p class="sample-desc">
+            If-Else condition: Pass if grade &gt;= 75, else Fail.
+          </p>
+          <div class="input-group">
+            <label for="condGrade">Enter Grade:</label>
+            <input type="number" id="condGrade" placeholder="e.g. 85" />
+          </div>
+          <button id="btnGrade">Check Status</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outGrade" style="font-weight: bold">
+              ...
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="sample-card">
+          <h3 class="sample-title">2. Voting Eligibility</h3>
+          <p class="sample-desc">
+            If-Else condition: Check if age makes you eligible to vote (&gt;=
+            18).
+          </p>
+          <div class="input-group">
+            <label for="condAge">Enter Age:</label>
+            <input type="number" id="condAge" placeholder="18" />
+          </div>
+          <button id="btnVote">Check Eligibility</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outVote">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 3 -->
+        <div class="sample-card">
+          <h3 class="sample-title">3. Positive, Negative, or Zero</h3>
+          <p class="sample-desc">If - Else If - Else condition chain.</p>
+          <div class="input-group">
+            <label for="condSign">Enter Number:</label>
+            <input type="number" id="condSign" placeholder="-5" />
+          </div>
+          <button id="btnSign">Check Sign</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outSign">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 4 -->
+        <div class="sample-card">
+          <h3 class="sample-title">4. Even or Odd</h3>
+          <p class="sample-desc">If condition using the modulo (%) operator.</p>
+          <div class="input-group">
+            <label for="condEvenOdd">Enter Number:</label>
+            <input type="number" id="condEvenOdd" placeholder="42" />
+          </div>
+          <button id="btnEvenOdd">Check Even/Odd</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outEvenOdd">...</div>
+          </div>
+        </div>
+
+        <!-- Sample 5 -->
+        <div class="sample-card">
+          <h3 class="sample-title">5. Discount Eligibility</h3>
+          <p class="sample-desc">
+            If condition: apply a 10% discount if spending &gt;= 1000.
+          </p>
+          <div class="input-group">
+            <label for="condDiscount">Total Amount (₱):</label>
+            <input
+              type="number"
+              step="0.01"
+              id="condDiscount"
+              placeholder="1250"
+            />
+          </div>
+          <button id="btnDiscount">Calculate Final Price</button>
+          <div class="output-area">
+            <div class="output-label">Output:</div>
+            <div class="output-content" id="outDiscount">...</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  border-bottom: 1px solid #000000;
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+.header-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.course-title {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #0000ee;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a:hover,
+nav a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+h1.page-title {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Profile Box */
+.profile-box {
+  border: 1px solid #000000;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+.profile-header {
+  border-bottom: 1px dashed #cccccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.p-avatar {
+  display: none; /* Hidden for a simpler look */
+}
+
+.p-info h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.p-info p {
+  margin: 5px 0 0 0;
+  color: #444444;
+}
+
+/* Sample Layout */
+.sample-grid {
+  display: block;
+}
+
+.sample-card {
+  border: 1px solid #999999;
+  padding: 15px;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+}
+
+.sample-title {
+  font-size: 1.1rem;
+  margin-top: 0;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 5px;
+}
+
+.sample-desc {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+/* Forms */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  padding: 5px;
+  border: 1px solid #666666;
+  width: 300px;
+  max-width: 100%;
+}
+
+button {
+  padding: 5px 15px;
+  border: 1px solid #000000;
+  background-color: #e0e0e0;
+  color: #000000;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #cccccc;
+}
+
+/* Outputs */
+.output-area {
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px dashed #666666;
+  background-color: #f9f9f9;
+}
+
+.output-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.output-content {
+  font-family: monospace;
+  font-size: 1rem;
+  white-space: pre-wrap;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  border-top: 1px solid #aaaaaa;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.85rem;
+}
+
+/* Utilities */
+.mb-1,
+.mb-2,
+.mb-3,
+.mb-4 {
+  margin-bottom: 15px;
+}
+.text-center {
+  text-align: left; /* Kept left-aligned to stick to default document flow */
+}
