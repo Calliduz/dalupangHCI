@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Helper: show error on an input field
+  function showError(inputEl, outputEl, message) {
+    outputEl.innerText = message;
+    outputEl.classList.add("output-error");
+    inputEl.classList.add("input-error");
+  }
+
+  // Helper: clear error styling
+  function clearError(inputEl, outputEl) {
+    outputEl.classList.remove("output-error");
+    inputEl.classList.remove("input-error");
+  }
+
   /* =========================================================
        Topic 1: Basic Input Output
        ========================================================= */
@@ -7,12 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnGreet = document.getElementById("btnGreet");
   if (btnGreet) {
     btnGreet.addEventListener("click", () => {
-      const name = document.getElementById("ioName").value;
+      const input = document.getElementById("ioName");
+      const name = input.value;
       const output = document.getElementById("outGreet");
       if (name.trim() === "") {
-        output.innerText = "Please enter your name.";
+        showError(input, output, "Please enter your name.");
         return;
       }
+      clearError(input, output);
       output.innerText = `Hello, ${name}! Welcome to the programming compilation.`;
     });
   }
@@ -21,10 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnEcho = document.getElementById("btnEcho");
   if (btnEcho) {
     btnEcho.addEventListener("click", () => {
-      const text = document.getElementById("ioEcho").value;
-      document.getElementById("outEcho").innerText = text
-        ? text
-        : "No input provided.";
+      const input = document.getElementById("ioEcho");
+      const text = input.value;
+      const output = document.getElementById("outEcho");
+      if (text.trim() === "") {
+        showError(input, output, "Please enter some text to echo.");
+        return;
+      }
+      clearError(input, output);
+      output.innerText = text;
     });
   }
 
@@ -32,10 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnWordCount = document.getElementById("btnWordCount");
   if (btnWordCount) {
     btnWordCount.addEventListener("click", () => {
-      const text = document.getElementById("ioWordCount").value.trim();
-      const count = text === "" ? 0 : text.split(/\s+/).length;
-      document.getElementById("outWordCount").innerText =
-        `Word count: ${count}`;
+      const input = document.getElementById("ioWordCount");
+      const text = input.value.trim();
+      const output = document.getElementById("outWordCount");
+      if (text === "") {
+        showError(input, output, "Please enter a sentence to count.");
+        return;
+      }
+      clearError(input, output);
+      const count = text.split(/\s+/).length;
+      output.innerText = `Word count: ${count}`;
     });
   }
 
@@ -43,8 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnUpper = document.getElementById("btnUpper");
   if (btnUpper) {
     btnUpper.addEventListener("click", () => {
-      const text = document.getElementById("ioUpper").value;
-      document.getElementById("outUpper").innerText = text.toUpperCase();
+      const input = document.getElementById("ioUpper");
+      const text = input.value;
+      const output = document.getElementById("outUpper");
+      if (text.trim() === "") {
+        showError(input, output, "Please enter some text to convert.");
+        return;
+      }
+      clearError(input, output);
+      output.innerText = text.toUpperCase();
     });
   }
 
@@ -52,9 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCharCount = document.getElementById("btnCharCount");
   if (btnCharCount) {
     btnCharCount.addEventListener("click", () => {
-      const text = document.getElementById("ioCharCount").value;
-      document.getElementById("outCharCount").innerText =
-        `Character count: ${text.length}`;
+      const input = document.getElementById("ioCharCount");
+      const text = input.value;
+      const output = document.getElementById("outCharCount");
+      if (text === "") {
+        showError(input, output, "Please enter some text to count.");
+        return;
+      }
+      clearError(input, output);
+      output.innerText = `Character count: ${text.length}`;
     });
   }
 
@@ -66,10 +105,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAdd = document.getElementById("btnAdd");
   if (btnAdd) {
     btnAdd.addEventListener("click", () => {
-      let num1 = parseFloat(document.getElementById("varNum1").value);
-      let num2 = parseFloat(document.getElementById("varNum2").value);
-      let result = (isNaN(num1) ? 0 : num1) + (isNaN(num2) ? 0 : num2);
-      document.getElementById("outAdd").innerText = `Sum (Number): ${result}`;
+      const input1 = document.getElementById("varNum1");
+      const input2 = document.getElementById("varNum2");
+      const output = document.getElementById("outAdd");
+      let num1 = parseFloat(input1.value);
+      let num2 = parseFloat(input2.value);
+      if (isNaN(num1) || input1.value.trim() === "") {
+        showError(input1, output, "Please enter a valid Number 1.");
+        return;
+      }
+      clearError(input1, output);
+      if (isNaN(num2) || input2.value.trim() === "") {
+        showError(input2, output, "Please enter a valid Number 2.");
+        return;
+      }
+      clearError(input2, output);
+      let result = num1 + num2;
+      output.innerText = `Sum (Number): ${result}`;
     });
   }
 
@@ -77,9 +129,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnProfile = document.getElementById("btnProfile");
   if (btnProfile) {
     btnProfile.addEventListener("click", () => {
-      let name = document.getElementById("varName").value; // String
-      let age = document.getElementById("varAge").value; // Can be treated as Number
-      document.getElementById("outProfile").innerText =
+      const nameInput = document.getElementById("varName");
+      const ageInput = document.getElementById("varAge");
+      const output = document.getElementById("outProfile");
+      let name = nameInput.value;
+      let age = ageInput.value;
+      if (name.trim() === "") {
+        showError(nameInput, output, "Please enter your name.");
+        return;
+      }
+      clearError(nameInput, output);
+      if (age.trim() === "" || isNaN(age)) {
+        showError(ageInput, output, "Please enter a valid age.");
+        return;
+      }
+      clearError(ageInput, output);
+      output.innerText =
         `Profile created. Name: ${name} (String), Age: ${age} (Number)`;
     });
   }
@@ -99,7 +164,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnType = document.getElementById("btnType");
   if (btnType) {
     btnType.addEventListener("click", () => {
-      let inputVal = document.getElementById("varType").value;
+      const input = document.getElementById("varType");
+      const output = document.getElementById("outType");
+      let inputVal = input.value;
+      if (inputVal.trim() === "") {
+        showError(input, output, "Please enter a value to check.");
+        return;
+      }
+      clearError(input, output);
       let type = "String";
       // Simple logic to guess if it's a number
       if (!isNaN(inputVal) && inputVal.trim() !== "") {
@@ -111,8 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
         type = "Boolean";
       }
-      document.getElementById("outType").innerText =
-        `Guessed Data Type: ${type}`;
+      output.innerText = `Guessed Data Type: ${type}`;
     });
   }
 
@@ -120,14 +191,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnTemp = document.getElementById("btnTemp");
   if (btnTemp) {
     btnTemp.addEventListener("click", () => {
-      let celsius = parseFloat(document.getElementById("varTemp").value);
-      if (isNaN(celsius)) {
-        document.getElementById("outTemp").innerText = "Enter a valid number.";
+      const input = document.getElementById("varTemp");
+      const output = document.getElementById("outTemp");
+      let celsius = parseFloat(input.value);
+      if (input.value.trim() === "" || isNaN(celsius)) {
+        showError(input, output, "Please enter a valid temperature.");
         return;
       }
+      clearError(input, output);
       let fahrenheit = (celsius * 9) / 5 + 32;
-      document.getElementById("outTemp").innerText =
-        `${celsius}°C is equal to ${fahrenheit.toFixed(2)}°F`;
+      output.innerText = `${celsius}°C is equal to ${fahrenheit.toFixed(2)}°F`;
     });
   }
 
@@ -139,16 +212,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnGrade = document.getElementById("btnGrade");
   if (btnGrade) {
     btnGrade.addEventListener("click", () => {
-      let grade = parseFloat(document.getElementById("condGrade").value);
+      const input = document.getElementById("condGrade");
+      let grade = parseFloat(input.value);
       let output = document.getElementById("outGrade");
-      if (isNaN(grade)) {
-        output.innerText = "Please enter a valid grade.";
-      } else if (grade >= 75) {
+      if (input.value.trim() === "" || isNaN(grade)) {
+        showError(input, output, "Please enter a valid grade.");
+        return;
+      }
+      clearError(input, output);
+      if (grade >= 75) {
         output.innerText = "Result: PASS";
-        output.style.color = "#15803d"; // Green
+        output.style.color = "#15803d";
       } else {
         output.innerText = "Result: FAIL";
-        output.style.color = "#b91c1c"; // Red
+        output.style.color = "#b91c1c";
       }
     });
   }
@@ -157,11 +234,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnVote = document.getElementById("btnVote");
   if (btnVote) {
     btnVote.addEventListener("click", () => {
-      let age = parseInt(document.getElementById("condAge").value);
+      const input = document.getElementById("condAge");
+      let age = parseInt(input.value);
       let output = document.getElementById("outVote");
-      if (isNaN(age)) {
-        output.innerText = "Please enter a valid age.";
-      } else if (age >= 18) {
+      if (input.value.trim() === "" || isNaN(age)) {
+        showError(input, output, "Please enter a valid age.");
+        return;
+      }
+      clearError(input, output);
+      if (age >= 18) {
         output.innerText = "You are eligible to vote.";
       } else {
         output.innerText = `You are NOT eligible to vote. You need ${18 - age} more year(s).`;
@@ -173,11 +254,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSign = document.getElementById("btnSign");
   if (btnSign) {
     btnSign.addEventListener("click", () => {
-      let num = parseFloat(document.getElementById("condSign").value);
+      const input = document.getElementById("condSign");
+      let num = parseFloat(input.value);
       let output = document.getElementById("outSign");
-      if (isNaN(num)) {
-        output.innerText = "Please enter a number.";
-      } else if (num > 0) {
+      if (input.value.trim() === "" || isNaN(num)) {
+        showError(input, output, "Please enter a number.");
+        return;
+      }
+      clearError(input, output);
+      if (num > 0) {
         output.innerText = "The number is Positive.";
       } else if (num < 0) {
         output.innerText = "The number is Negative.";
@@ -191,11 +276,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnEvenOdd = document.getElementById("btnEvenOdd");
   if (btnEvenOdd) {
     btnEvenOdd.addEventListener("click", () => {
-      let num = parseInt(document.getElementById("condEvenOdd").value);
+      const input = document.getElementById("condEvenOdd");
+      let num = parseInt(input.value);
       let output = document.getElementById("outEvenOdd");
-      if (isNaN(num)) {
-        output.innerText = "Please enter an integer.";
-      } else if (num % 2 === 0) {
+      if (input.value.trim() === "" || isNaN(num)) {
+        showError(input, output, "Please enter an integer.");
+        return;
+      }
+      clearError(input, output);
+      if (num % 2 === 0) {
         output.innerText = "The number is Even.";
       } else {
         output.innerText = "The number is Odd.";
@@ -207,11 +296,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnDiscount = document.getElementById("btnDiscount");
   if (btnDiscount) {
     btnDiscount.addEventListener("click", () => {
-      let amount = parseFloat(document.getElementById("condDiscount").value);
+      const input = document.getElementById("condDiscount");
+      let amount = parseFloat(input.value);
       let output = document.getElementById("outDiscount");
-      if (isNaN(amount) || amount < 0) {
-        output.innerText = "Please enter a valid amount.";
-      } else if (amount >= 1000) {
+      if (input.value.trim() === "" || isNaN(amount) || amount < 0) {
+        showError(input, output, "Please enter a valid amount.");
+        return;
+      }
+      clearError(input, output);
+      if (amount >= 1000) {
         let discounted = amount * 0.9;
         output.innerText = `You get a 10% discount! New total: ₱${discounted.toFixed(2)}`;
       } else {
@@ -228,12 +321,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSeq = document.getElementById("btnSeq");
   if (btnSeq) {
     btnSeq.addEventListener("click", () => {
-      let num = parseInt(document.getElementById("loopSeq").value);
+      const input = document.getElementById("loopSeq");
+      let num = parseInt(input.value);
       let output = document.getElementById("outSeq");
-      if (isNaN(num) || num < 1 || num > 100) {
-        output.innerText = "Please enter a valid number between 1 and 100.";
+      if (input.value.trim() === "" || isNaN(num) || num < 1 || num > 100) {
+        showError(input, output, "Please enter a valid number between 1 and 100.");
         return;
       }
+      clearError(input, output);
       let arr = [];
       for (let i = 1; i <= num; i++) {
         arr.push(i);
@@ -246,12 +341,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnMult = document.getElementById("btnMult");
   if (btnMult) {
     btnMult.addEventListener("click", () => {
-      let num = parseInt(document.getElementById("loopMult").value);
+      const input = document.getElementById("loopMult");
+      let num = parseInt(input.value);
       let output = document.getElementById("outMult");
-      if (isNaN(num)) {
-        output.innerText = "Please enter a valid number.";
+      if (input.value.trim() === "" || isNaN(num)) {
+        showError(input, output, "Please enter a valid number.");
         return;
       }
+      clearError(input, output);
       let res = "";
       for (let i = 1; i <= 10; i++) {
         res += `${num} x ${i} = ${num * i}\n`;
@@ -264,14 +361,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnRepeat = document.getElementById("btnRepeat");
   if (btnRepeat) {
     btnRepeat.addEventListener("click", () => {
-      let word = document.getElementById("loopWord").value;
-      let times = parseInt(document.getElementById("loopTimes").value);
+      const wordInput = document.getElementById("loopWord");
+      const timesInput = document.getElementById("loopTimes");
+      let word = wordInput.value;
+      let times = parseInt(timesInput.value);
       let output = document.getElementById("outRepeat");
-      if (!word || isNaN(times) || times < 1 || times > 50) {
-        output.innerText =
-          "Provide a word and a valid number of repetitions (1-50).";
+      if (word.trim() === "") {
+        showError(wordInput, output, "Please enter a word to repeat.");
         return;
       }
+      clearError(wordInput, output);
+      if (timesInput.value.trim() === "" || isNaN(times) || times < 1 || times > 50) {
+        showError(timesInput, output, "Please enter a valid number of repetitions (1-50).");
+        return;
+      }
+      clearError(timesInput, output);
       let res = "";
       let count = 0;
       while (count < times) {
@@ -286,12 +390,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnLaunch = document.getElementById("btnLaunch");
   if (btnLaunch) {
     btnLaunch.addEventListener("click", () => {
-      let start = parseInt(document.getElementById("loopLaunch").value);
+      const input = document.getElementById("loopLaunch");
+      let start = parseInt(input.value);
       let output = document.getElementById("outLaunch");
-      if (isNaN(start) || start < 1 || start > 20) {
-        output.innerText = "Enter a valid number between 1 and 20.";
+      if (input.value.trim() === "" || isNaN(start) || start < 1 || start > 20) {
+        showError(input, output, "Please enter a valid number between 1 and 20.");
         return;
       }
+      clearError(input, output);
       let res = "";
       let counter = start;
       do {
@@ -307,12 +413,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSumN = document.getElementById("btnSumN");
   if (btnSumN) {
     btnSumN.addEventListener("click", () => {
-      let n = parseInt(document.getElementById("loopSumN").value);
+      const input = document.getElementById("loopSumN");
+      let n = parseInt(input.value);
       let output = document.getElementById("outSumN");
-      if (isNaN(n) || n < 1) {
-        output.innerText = "Please enter a positive integer.";
+      if (input.value.trim() === "" || isNaN(n) || n < 1) {
+        showError(input, output, "Please enter a positive integer.");
         return;
       }
+      clearError(input, output);
       let sum = 0;
       for (let i = 1; i <= n; i++) {
         sum += i;
