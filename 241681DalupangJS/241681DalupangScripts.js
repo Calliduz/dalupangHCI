@@ -139,8 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
       clearError(nameInput, output);
-      if (age.trim() === "" || isNaN(age)) {
-        showError(ageInput, output, "Please enter a valid age.");
+      if (age.trim() === "" || isNaN(age) || parseInt(age) < 1 || parseInt(age) > 150) {
+        showError(ageInput, output, "Please enter a valid age (1-150).");
         return;
       }
       clearError(ageInput, output);
@@ -194,8 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("varTemp");
       const output = document.getElementById("outTemp");
       let celsius = parseFloat(input.value);
-      if (input.value.trim() === "" || isNaN(celsius)) {
-        showError(input, output, "Please enter a valid temperature.");
+      if (input.value.trim() === "" || isNaN(celsius) || celsius < -273.15) {
+        showError(input, output, "Please enter a valid temperature (-273.15°C or above).");
         return;
       }
       clearError(input, output);
@@ -215,8 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("condGrade");
       let grade = parseFloat(input.value);
       let output = document.getElementById("outGrade");
-      if (input.value.trim() === "" || isNaN(grade)) {
-        showError(input, output, "Please enter a valid grade.");
+      if (input.value.trim() === "" || isNaN(grade) || grade < 0 || grade > 100) {
+        showError(input, output, "Please enter a valid grade (0-100).");
         return;
       }
       clearError(input, output);
@@ -237,8 +237,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("condAge");
       let age = parseInt(input.value);
       let output = document.getElementById("outVote");
-      if (input.value.trim() === "" || isNaN(age)) {
-        showError(input, output, "Please enter a valid age.");
+      if (input.value.trim() === "" || isNaN(age) || age < 0 || age > 150) {
+        showError(input, output, "Please enter a valid age (0-150).");
         return;
       }
       clearError(input, output);
@@ -299,8 +299,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("condDiscount");
       let amount = parseFloat(input.value);
       let output = document.getElementById("outDiscount");
-      if (input.value.trim() === "" || isNaN(amount) || amount < 0) {
-        showError(input, output, "Please enter a valid amount.");
+      if (input.value.trim() === "" || isNaN(amount) || amount < 0 || amount > 1000000) {
+        showError(input, output, "Please enter a valid amount (0 - 1,000,000).");
         return;
       }
       clearError(input, output);
@@ -344,8 +344,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("loopMult");
       let num = parseInt(input.value);
       let output = document.getElementById("outMult");
-      if (input.value.trim() === "" || isNaN(num)) {
-        showError(input, output, "Please enter a valid number.");
+      if (input.value.trim() === "" || isNaN(num) || num < 1 || num > 100) {
+        showError(input, output, "Please enter a valid number (1-100).");
         return;
       }
       clearError(input, output);
@@ -416,8 +416,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = document.getElementById("loopSumN");
       let n = parseInt(input.value);
       let output = document.getElementById("outSumN");
-      if (input.value.trim() === "" || isNaN(n) || n < 1) {
-        showError(input, output, "Please enter a positive integer.");
+      if (input.value.trim() === "" || isNaN(n) || n < 1 || n > 1000) {
+        showError(input, output, "Please enter a positive integer (1-1000).");
         return;
       }
       clearError(input, output);
